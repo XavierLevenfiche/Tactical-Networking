@@ -20,4 +20,22 @@ I focus on **real-world, field-deployable mesh networks** and network performanc
 ---
 
 ## 🔹 Repository Structure
+/tactical-networking
+├── manet/ # MANET setup, scripts, routing notes
+├── meshtastic/ # LoRa node configs, firmware updates
+├── halow/ # HL2, DiamondNet, antenna tests, RSSI/MCS logs
+├── aredn/ # AREDN configs, deployment notes
+├── openwrt/ # OpenWRT mesh setups, scripts, bridging
+├── rtl-sdr/ # SDR scanning, Wi-Fi/BLE/drone monitoring
+├── tools/ # Scripts (Python, PowerShell, utilities)
+├── docs/ # Diagrams, field notes, PDFs
+└── assets/ # Photos, diagrams, screenshots
 
+---
+
+## 🔹 Getting Started
+
+1. Clone the repo:
+      git clone https://github.com/<your-username>/tactical-networking.git
+2. Browse the technology-specific folders to explore experiments, scripts, and notes.
+3. Follow folder-level READMEs for setup instructions, deployment tips, and results.
