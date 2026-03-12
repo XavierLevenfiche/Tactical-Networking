@@ -81,7 +81,7 @@ Because LoRa can operate without cellular infrastructure, it has potential appli
 
 --- 
 
-## Meshtastic Platform
+# Meshtastic Platform
 
 One open-source project built on LoRa technology is:
 
