@@ -109,3 +109,60 @@ Because nodes forward traffic for others, the network can extend its range as mo
 
 This behavior is known as **mesh networking**.
 
+---
+
+## Message Propagation
+
+Messages in a LoRa mesh network typically follow a **store-and-forward model**.
+
+In this model:
+
+1. A device sends a message
+2. Nearby nodes receive it
+3. Some nodes retransmit the message
+4. The message propagates across the network
+
+This allows communication beyond the direct radio range of a single device.
+
+---
+
+## Node Relay Behavior
+
+Nodes may relay messages based on several factors:
+
+* signal strength
+* network configuration
+* hop limits
+
+Because LoRa bandwidth is limited, networks often restrict the number of times a message may be retransmitted.
+
+This helps prevent network congestion.
+
+---
+
+## Bandwidth Limitations
+
+While LoRa offers impressive communication range, it comes with significant limitations.
+
+LoRa data rates are typically measured in **kilobits per second**, which is far lower than WiFi.
+
+This creates several constraints:
+
+* limited message throughput
+* slower update frequency
+* difficulty transmitting large data payloads
+
+For applications that require frequent updates—such as real-time location tracking—this limitation may become significant.
+
+---
+
+## Implications for Team Tracking
+
+If multiple devices attempt to transmit frequent location updates, the network may experience:
+
+* message delays
+* dropped transmissions
+* congestion
+
+Further research will be required to determine whether LoRa mesh networking can support reliable location sharing for multiple users.
+
