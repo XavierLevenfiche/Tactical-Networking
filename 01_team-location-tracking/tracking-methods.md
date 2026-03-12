@@ -54,4 +54,41 @@ Possible options include:
 * mesh networking
 * peer-to-peer wireless systems
 
-Further research will explore these possibilities.
+---
+
+## Centralized vs Peer-to-Peer Tracking
+
+Location tracking systems generally operate in one of two architectures.
+
+### Centralized Systems
+
+Centralized systems rely on a server that receives location updates from devices and distributes those updates to other users.
+
+Advantages:
+
+* easier coordination
+* consistent data synchronization
+
+Disadvantages:
+
+* requires internet connectivity
+* introduces single point of failure
+
+---
+
+### Peer-to-Peer Systems
+
+Peer-to-peer systems allow devices to exchange location information directly without requiring a central server.
+
+Advantages:
+
+* works without internet infrastructure
+* more resilient to network disruptions
+
+Disadvantages:
+
+* more complex network routing
+* potential for slower synchronization
+
+Understanding these architectures is important when designing **off-grid team tracking systems**.
+
