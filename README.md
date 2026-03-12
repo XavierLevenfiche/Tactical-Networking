@@ -10,6 +10,14 @@ The project began with a simple question:
 
 Many professional solutions exist, such as systems produced by Silvus Technologies and Persistent Systems. However, these platforms are designed for government and defense organizations and are typically outside the budget of hobbyist teams, research groups, or volunteer organizations.
 
+Professional systems capable of this exist, such as platforms produced by
+Silvus Technologies
+(https://silvustechnologies.com) and
+Persistent Systems
+(https://www.persistentsystems.com).
+
+These systems provide advanced mobile ad-hoc networking capabilities but are typically designed for government or defense organizations.
+
 This project explores whether similar capabilities can be approximated using:
 
 * open-source networking software
@@ -22,9 +30,14 @@ This project explores whether similar capabilities can be approximated using:
 
 The research focuses on three main objectives:
 
-**1. Team Location Tracking**
+### 1. Team Location Tracking
 
-Understanding how teams can share position data in real time using applications such as Android Team Awareness Kit without relying on cellular networks.
+Understanding how small teams can share GPS locations in real time using software platforms such as
+Android Team Awareness Kit
+(https://tak.gov/products/tak/atak).
+
+ATAK is part of the TAK ecosystem developed to provide real-time situational awareness for distributed teams operating in the field.
+
 
 **2. Tactical Networking**
 
