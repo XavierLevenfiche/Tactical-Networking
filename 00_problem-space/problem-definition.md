@@ -13,9 +13,17 @@ This creates several challenges:
 
 Modern situational awareness platforms exist that allow teams to share their GPS locations in real time.
 
-One widely used example is Android Team Awareness Kit.
+One widely used example is
+Android Team Awareness Kit
+(https://tak.gov/products/tak/atak).
 
-However, these platforms typically rely on:
+ATAK is part of the TAK ecosystem and allows teams to:
+
+* share GPS locations
+* coordinate movements
+* exchange data over tactical networks
+
+However, these platforms typically assume the presence of reliable networking infrastructure:
 
 * cellular data networks
 * centralized servers
