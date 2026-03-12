@@ -78,3 +78,34 @@ These properties make LoRa suitable for applications such as:
 * simple messaging
 
 Because LoRa can operate without cellular infrastructure, it has potential applications for **off-grid communication networks**.
+
+--- 
+
+## Meshtastic Platform
+
+One open-source project built on LoRa technology is:
+
+Meshtastic
+
+Meshtastic allows small radios to form a **decentralized mesh network**.
+
+In this network:
+
+* each node can relay messages
+* data can hop between multiple nodes
+* communication does not require internet access
+
+---
+
+## Basic Operation
+
+Each Meshtastic device can perform several roles:
+
+* send messages
+* receive messages
+* relay messages for other nodes
+
+Because nodes forward traffic for others, the network can extend its range as more nodes join.
+
+This behavior is known as **mesh networking**.
+
