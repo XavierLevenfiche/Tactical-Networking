@@ -4,6 +4,22 @@
 
 One potential solution for off-grid communication is **LoRa radio technology**.
 
+LoRa (Long Range) is a wireless communication technology developed by
+Semtech.
+
+Technical documentation for LoRa can be found through the LoRa Alliance:
+
+https://lora-alliance.org
+
+LoRa is designed for:
+
+* long range communication
+* low power consumption
+* low bandwidth data transmission
+
+Unlike WiFi networks, LoRa prioritizes **range and efficiency over throughput**.
+
+
 LoRa is designed for:
 
 * long range communication
