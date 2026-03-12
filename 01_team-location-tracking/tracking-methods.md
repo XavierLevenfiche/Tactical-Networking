@@ -6,9 +6,15 @@ Several software platforms exist that allow teams to share their GPS locations a
 
 These systems are often referred to as **situational awareness platforms**.
 
-One of the most widely known platforms is:
-
+One of the most widely known platforms is
 Android Team Awareness Kit
+(https://tak.gov/products/tak/atak).
+
+ATAK provides a mapping interface that allows team members to share their positions and communicate across a network.
+
+Official documentation for the TAK ecosystem can be found at:
+
+https://tak.gov
 
 ATAK allows users to:
 
