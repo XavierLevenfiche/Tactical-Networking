@@ -10,11 +10,16 @@ LoRa is designed for:
 * low power consumption
 * low data rates
 
-A popular open-source project built on LoRa is:
-
+A popular open-source project built on LoRa is
 Meshtastic
+(https://meshtastic.org).
 
-Meshtastic allows small radios to form a **mesh network**, passing messages between nodes without relying on internet infrastructure.
+Meshtastic enables small radios to form decentralized LoRa **mesh networks** capable of exchanging messages and telemetry without requiring cellular infrastructure.
+
+The project is open source and its codebase is available on GitHub:
+
+https://github.com/meshtastic/firmware
+
 
 ---
 
