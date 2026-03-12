@@ -21,3 +21,13 @@ Explored how team tracking systems share location information.
 Key discovery: tracking platforms rely on either centralized servers or peer-to-peer networking models.
 
 This distinction will likely influence how off-grid tracking systems must be designed.
+
+---
+
+### Entry 3 — LoRa Networking
+
+Researched LoRa wireless communication and the Meshtastic ecosystem.
+
+Key insight: LoRa offers long communication range but extremely limited bandwidth.
+
+This may affect its ability to support high-frequency location updates for multiple devices.
