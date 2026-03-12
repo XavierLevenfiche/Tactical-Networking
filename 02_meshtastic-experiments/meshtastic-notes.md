@@ -23,6 +23,14 @@ https://github.com/meshtastic/firmware
 
 ---
 
+Unlike traditional WiFi networks, LoRa prioritizes distance and power efficiency over data throughput.
+
+## Typical LoRa characteristics:
+* range: several kilometers depending on terrain
+* data rate: extremely low compared to WiFi
+* power usage: optimized for battery-powered devices
+
+
 ## Potential Advantages
 
 * long communication range
@@ -41,3 +49,16 @@ LoRa radios operate at extremely low data rates.
 While suitable for short messages and location updates, the bandwidth may be insufficient for applications requiring more frequent data transmission.
 
 Further experimentation will be required to evaluate whether LoRa mesh networking is sufficient for reliable team location tracking.
+
+---
+
+## Why LoRa is Interesting
+
+These properties make LoRa suitable for applications such as:
+
+* environmental sensors
+* remote telemetry
+* location beacons
+* simple messaging
+
+Because LoRa can operate without cellular infrastructure, it has potential applications for **off-grid communication networks**.
