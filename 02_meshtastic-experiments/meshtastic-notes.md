@@ -166,3 +166,48 @@ If multiple devices attempt to transmit frequent location updates, the network m
 
 Further research will be required to determine whether LoRa mesh networking can support reliable location sharing for multiple users.
 
+---
+
+# Practical Use Cases for LoRa Networks
+
+Because LoRa prioritizes **range and power efficiency over bandwidth**, it is best suited for specific types of communication workloads.
+
+Common use cases include:
+
+### Telemetry
+
+Devices transmit small packets of sensor data at infrequent intervals.
+
+Examples:
+
+* environmental monitoring
+* weather stations
+* remote infrastructure monitoring
+
+### Short Messaging
+
+LoRa mesh networks can support simple text messaging between nodes.
+
+Example systems include:
+
+* Meshtastic
+  https://meshtastic.org
+
+### Location Beaconing
+
+Devices periodically transmit GPS coordinates that can be shared across a mesh network.
+
+Because the messages are small, this works well within LoRa bandwidth limits.
+
+---
+
+## Relevance to Team Tracking
+
+Location beacons require significantly less bandwidth than full mapping or data sharing systems.
+
+This suggests LoRa may be suitable for:
+
+* simple location reporting
+* low frequency position updates
+
+However, higher update rates or additional data traffic may exceed the capacity of LoRa networks.
