@@ -101,3 +101,24 @@ Because nodes are interconnected, the network can continue functioning even if i
 | Complexity             | Low                     | Higher routing complexity  |
 
 For distributed field networks, mesh architectures often provide greater resilience and flexibility than traditional star-based networks.
+
+---
+
+# Routing Complexity in Mesh Networks
+
+Because mesh networks allow nodes to communicate through multiple paths, routing decisions become more complex.
+
+The network must determine:
+
+* which nodes should forward packets
+* which path is optimal
+* how to react when nodes move or disconnect
+
+To address these challenges, specialized **mesh routing protocols** are required.
+
+Examples include:
+
+* OLSR
+* BATMAN
+* Babel
+
