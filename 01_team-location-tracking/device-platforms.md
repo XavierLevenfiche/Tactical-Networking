@@ -26,3 +26,24 @@ Mixed device ecosystems introduce challenges:
 * varying battery life
 
 These limitations influence how communication systems must be designed.
+
+---
+
+# Secure Android Platforms
+
+For security-sensitive environments, hardened Android operating systems may be preferred.
+
+One example is
+GrapheneOS
+https://grapheneos.org
+
+GrapheneOS focuses on:
+
+* strong application sandboxing
+* improved exploit protections
+* privacy controls
+
+The operating system is primarily supported on
+Google Pixel devices.
+
+https://store.google.com
