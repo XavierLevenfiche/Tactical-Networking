@@ -79,16 +79,16 @@ PACE planning allows teams to maintain communication even when individual system
 Example PACE structure for a small team network:
 
 Primary
-IP-based network carrying situational awareness data.
+* IP-based network carrying situational awareness data.
 
 Alternate
-Secondary radio network.
+* Secondary radio network.
 
 Contingency
-Low bandwidth mesh network such as LoRa.
+* Low bandwidth mesh network such as LoRa.
 
 Emergency
-Direct voice communication.
+* Direct voice communication.
 
 This layered approach increases reliability by ensuring multiple communication paths remain available.
 
