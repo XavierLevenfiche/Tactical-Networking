@@ -17,7 +17,7 @@ C --> D
 
 Example implementation:
 
-Primary → IP mesh network
-Alternate → secondary radio channel
-Contingency → LoRa messaging
-Emergency → voice or visual signals
+*Primary → IP mesh network
+*Alternate → secondary radio channel
+*Contingency → LoRa messaging
+*Emergency → voice or visual signals
