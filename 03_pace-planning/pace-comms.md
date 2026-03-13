@@ -69,3 +69,26 @@ Understanding PACE planning highlights an important concept:
 Reliable communications are not built around **one technology**, but around **multiple layered systems**.
 
 This insight will guide further research into decentralized networking and tactical communication systems.
+
+---
+
+# Applying PACE to Small Team Networks
+
+PACE planning allows teams to maintain communication even when individual systems fail.
+
+Example PACE structure for a small team network:
+
+Primary
+IP-based network carrying situational awareness data.
+
+Alternate
+Secondary radio network.
+
+Contingency
+Low bandwidth mesh network such as LoRa.
+
+Emergency
+Direct voice communication.
+
+This layered approach increases reliability by ensuring multiple communication paths remain available.
+
