@@ -211,3 +211,28 @@ This suggests LoRa may be suitable for:
 * low frequency position updates
 
 However, higher update rates or additional data traffic may exceed the capacity of LoRa networks.
+
+---
+
+# Limitations for Situational Awareness Platforms
+
+Applications such as
+Android Team Awareness Kit
+https://tak.gov/products/tak/atak
+
+require frequent position updates and network reliability.
+
+Typical ATAK deployments transmit:
+
+* position updates
+* chat messages
+* map markers
+* file transfers
+
+LoRa networks may struggle with this type of traffic due to:
+
+* low data rates
+* limited packet sizes
+* network congestion when many nodes transmit
+
+Because of these constraints, LoRa may be better suited as a **low-bandwidth backup communication layer** rather than a primary data network.
