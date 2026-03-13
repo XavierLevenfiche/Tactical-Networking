@@ -31,3 +31,12 @@ Researched LoRa wireless communication and the Meshtastic ecosystem.
 Key insight: LoRa offers long communication range but extremely limited bandwidth.
 
 This may affect its ability to support high-frequency location updates for multiple devices.
+
+---
+
+### Entry 4 — LoRa Use Cases
+
+Expanded research into practical applications of LoRa networking.
+
+Observation: LoRa networks work well for low-frequency telemetry and messaging but may struggle with high-frequency data such as rapid location updates.
+
