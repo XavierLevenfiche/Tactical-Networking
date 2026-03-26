@@ -38,3 +38,28 @@ Advantages include:
 * dedicated tracking functionality
 
 Because these devices focus on a single purpose, they may be well suited for operator-level nodes within a distributed tracking network.
+
+---
+
+# Node Roles
+
+### Operator Node
+
+* carried by individual users
+* provides location data
+* connects to mesh network
+
+---
+
+### Relay Node
+
+* extends network range
+* forwards traffic between nodes
+
+---
+
+### TOC Node
+
+* central coordination point
+* may host services
+* uses elevated antennas
