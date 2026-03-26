@@ -48,3 +48,19 @@ The TOC is a critical component for:
 * command and control
 * network visibility
 * coordination across distributed nodes
+
+--- 
+
+## Addressing Integration
+
+The network uses a segmented addressing model:
+
+* TOC → 192.168.20.x
+* Relay → 192.168.21.x
+* Operators → 192.168.22.x
+
+This allows:
+
+* easier identification of node roles
+* structured network expansion
+* improved troubleshooting during field testing
