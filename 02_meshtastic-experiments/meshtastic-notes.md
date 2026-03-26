@@ -236,3 +236,19 @@ LoRa networks may struggle with this type of traffic due to:
 * network congestion when many nodes transmit
 
 Because of these constraints, LoRa may be better suited as a **low-bandwidth backup communication layer** rather than a primary data network.
+
+---
+
+# LoRa vs WiFi Mesh
+
+| Feature     | LoRa      | WiFi Mesh (802.11s) |
+| ----------- | --------- | ------------------- |
+| Range       | Very High | Moderate            |
+| Bandwidth   | Very Low  | High                |
+| Power Usage | Low       | Higher              |
+| Use Case    | Telemetry | Data + applications |
+
+Conclusion:
+
+LoRa is better suited for **low-bandwidth fallback**,
+while WiFi mesh is better suited for **primary data networks**.
