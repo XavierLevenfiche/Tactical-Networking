@@ -51,3 +51,33 @@ These limitations prevented installation of alternative operating systems such a
 Because of this constraint, the device could not be repurposed for experimentation as a field communication device.
 
 This highlighted the importance of **hardware compatibility when designing field networking systems**.
+
+---
+
+### Entry 6 — Transition to Field Testing
+
+At this stage, the project has moved beyond theoretical research and into preparation for real-world testing.
+
+Key areas of focus:
+
+* validating mesh network performance in physical environments
+* measuring signal strength (RSSI), data rates (MCS), and packet loss
+* evaluating the impact of antenna placement and elevation
+* mapping network coverage using GPS coordinates
+
+Planned testing approach:
+
+1. Deploy nodes at controlled distances
+2. record signal metrics at each location
+3. capture GPS coordinates for mapping
+4. analyze coverage and reliability
+
+Initial hypothesis:
+
+* elevation and line of sight will significantly impact performance
+* relay nodes will be required to maintain connectivity at distance
+
+This phase will determine whether the proposed architecture is viable in real-world conditions.
+
+---
+
