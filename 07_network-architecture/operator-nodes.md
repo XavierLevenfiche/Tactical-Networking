@@ -63,3 +63,20 @@ Because these devices focus on a single purpose, they may be well suited for ope
 * central coordination point
 * may host services
 * uses elevated antennas
+
+---
+
+# Addressing Integration
+
+The network uses a segmented addressing model:
+
+* TOC → 192.168.20.x
+* Relay → 192.168.21.x
+* Operators → 192.168.22.x
+
+This allows:
+
+* easier identification of node roles
+* structured network expansion
+* improved troubleshooting during field testing
+
