@@ -104,6 +104,61 @@ It does not promote or endorse any specific operational use case. The goal is to
 
 ---
 
-## Current Status
+# Project Status — Tactical Networking Research
 
-Early research and technology exploration.
+## Overall Progress
+
+| Area                                  | Status         | Notes                                             |
+| ------------------------------------- | -------------- | ------------------------------------------------- |
+| Problem Definition                    | 🟢 Complete    | Clear understanding of team tracking requirements |
+| Tracking Platforms (ATAK / ecosystem) | 🟢 Complete    | Core platform identified                          |
+| LoRa / Meshtastic                     | 🟢 Complete    | Strengths & limitations understood                |
+| PACE Planning                         | 🟢 Complete    | Communication layering defined                    |
+| Device Ecosystem                      | 🟢 Complete    | Smartphones vs dedicated devices evaluated        |
+| Operator Hardware                     | 🟢 Complete    | T1000E selected                                   |
+| TOC Hardware                          | 🟡 In Progress | Surface identified, further validation needed     |
+| Mesh Networking Theory                | 🟢 Complete    | Concepts understood                               |
+| MANET Routing Protocols               | 🟢 Complete    | OLSR / BATMAN / Babel researched                  |
+| WiFi HaLow Research                   | 🟡 In Progress | Promising but requires implementation             |
+| OpenWRT / Mesh Implementation         | 🔴 Not Started | Needs hands-on setup                              |
+| Network Architecture Design           | 🟡 In Progress | Early structure defined                           |
+| TOC Architecture                      | 🟡 In Progress | Conceptual phase                                  |
+| Field Testing                         | 🔴 Not Started | Requires deployment + measurement                 |
+| XCOM / Tailscale / Overlay Networking | 🔴 Not Started | Future research area                              |
+
+---
+
+## Legend
+
+* 🟢 Complete — Concept understood and documented
+* 🟡 In Progress — Partial understanding or implementation
+* 🔴 Not Started — Requires research or testing
+
+---
+
+## Current Focus
+
+Transitioning from **research → implementation**, specifically:
+
+* OpenWRT configuration
+* 802.11s mesh setup
+* WiFi HaLow deployment
+* Network architecture design
+
+---
+
+## Next Milestones
+
+* Build first functional mesh network
+* Test routing protocols (Babel vs BATMAN)
+* Establish TOC node
+* Begin field testing (RSSI / packet loss)
+
+---
+
+## Long-Term Goals
+
+* Reliable off-grid team tracking network
+* Layered PACE communication system
+* Fully mobile TOC architecture
+* Integrated situational awareness platform
