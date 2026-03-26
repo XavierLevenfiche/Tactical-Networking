@@ -29,3 +29,30 @@ HaLow networks may support:
 * distributed monitoring systems
 
 Because it supports IP networking, HaLow may also enable **long-range mesh networking architectures**.
+
+---
+
+# Hardware Considerations
+
+WiFi HaLow operates in sub-GHz spectrum, enabling longer range than traditional WiFi.
+
+WiFi Alliance overview:
+https://www.wi-fi.org/discover-wi-fi/wi-fi-halow
+
+---
+
+## Potential Advantages
+
+* longer range than 2.4GHz / 5GHz WiFi
+* IP-based communication
+* better bandwidth than LoRa
+
+---
+
+## Open Questions
+
+* hardware availability
+* compatibility with OpenWRT
+* real-world performance
+
+Further testing required.
