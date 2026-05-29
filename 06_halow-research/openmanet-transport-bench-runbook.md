@@ -71,6 +71,15 @@ Firmware dry-run check from 2026-05-29:
 - The same dry-run reported config incompatibility for config-preserving upgrade and requires `sysupgrade -n`.
 - No flash was performed during the dry-run.
 
+First-node flash result from 2026-05-29:
+
+- TL was flashed only after fresh backups and a post-flash `10.41.254.2/16` management route were prepared on `diamond-toc`.
+- Flash required `sysupgrade -F -n`.
+- TL came back as OpenMANET `24.10 1.6.5` at `10.41.254.1`.
+- HTTP/LuCI and SSH were recovered.
+- TOC and RTO were not flashed.
+- Stop condition remains active for the rest of the nodes until TL is configured and a multi-node OpenMANET transport check passes.
+
 ### Path B - Manual OpenWrt UCI
 
 Use this if keeping the current Morse/OpenWrt firmware and manually aligning network config to OpenMANET's BATMAN-V shape.
@@ -193,6 +202,13 @@ Only after the first node passes:
 3. Re-test topology after every node.
 4. Save post-change backups.
 5. Update the test log.
+
+Additional gate after the 2026-05-29 TL flash:
+
+- do not flash TOC or RTO until TL setup wizard/CLI config is completed
+- confirm TL role/name/channel policy
+- confirm `openmanetd`, BATMAN, DHCP, and client access are stable
+- confirm the docs model being followed: OpenMANET `1.6.5` observed state versus newer `bat0`/`br-ahwlan` documentation
 
 ## Post-Transport Tests
 
