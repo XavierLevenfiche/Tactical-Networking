@@ -56,12 +56,20 @@ Required before flash:
 - SHA256 checksum
 - recovery method
 - physical/local access
+- post-flash management plan, because `sysupgrade -n` will not keep current `192.168.8.x` config
 
 Known release check from 2026-05-29:
 
 - OpenMANET `1.6.4` and `1.6.5` had HaLowLink2 images.
 - OpenMANET `1.7.0` added comms/PTT features but did not expose a HaLowLink2 image in the checked release assets.
 - HaLowLink2 comms is not assumed supported on `1.7.0`.
+
+Firmware dry-run check from 2026-05-29:
+
+- `openmanet-1.6.5-halowlink2-mm8108-squashfs-sysupgrade.bin` checksum verified as `644907eb386e859293a696000bbc097efd57dd8ef09c891b1faeff255c627555`.
+- `sysupgrade -T` on TL confirmed the device is supported.
+- The same dry-run reported config incompatibility for config-preserving upgrade and requires `sysupgrade -n`.
+- No flash was performed during the dry-run.
 
 ### Path B - Manual OpenWrt UCI
 
@@ -215,6 +223,7 @@ Stop and restore baseline if:
 - `batctl` has no interface or no neighbors
 - DHCP behavior is inconsistent
 - the OpenMANET target version lacks the needed HaLowLink2 support
+- firmware dry-run requires `sysupgrade -n` and no post-flash management path has been verified
 
 ## Output To Record
 
