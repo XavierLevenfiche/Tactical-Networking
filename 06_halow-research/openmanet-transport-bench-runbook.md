@@ -209,6 +209,8 @@ Additional gate after the 2026-05-29 TL flash:
 - confirm TL role/name/channel policy
 - confirm `openmanetd`, BATMAN, DHCP, and client access are stable
 - confirm the docs model being followed: OpenMANET `1.6.5` observed state versus newer `bat0`/`br-ahwlan` documentation
+- do not flash RTO while the Surface jump host depends on RTO's old `DIAMONDNET` AP for Tailscale access
+- prefer a local browser or wired/local management path for the TL wizard because the current Tailscale-to-Surface-to-TL relay is too intermittent for further mutations
 
 ## Post-Transport Tests
 
