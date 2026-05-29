@@ -31,6 +31,19 @@ The mesh interface is attached to a network bridge that allows traffic to pass b
 3. Bridge interface to LAN
 4. Enable routing protocol (optional)
 
+## Bench Finding - HaLowLink2
+
+On 2026-05-29, three Morse Micro HaLowLink2 nodes were reached on the bench network.
+
+The current working configuration is a flat 802.11ah mesh attached to the LAN bridge. BATMAN Advanced tooling is already installed on the nodes, including `kmod-batman-adv` and `batctl`, but BATMAN is not yet active as the forwarding plane.
+
+For this hardware, "install BATMAN/OpenMANET-style routing" and "migrate the mesh to BATMAN" are separate steps:
+
+- Install/tooling: already present on the bench nodes.
+- Migration/config: not yet performed.
+
+The migration should be rollback-gated because changing the wireless mesh network assignment can cut off management access.
+
 ---
 
 ## Considerations

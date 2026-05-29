@@ -92,6 +92,7 @@ Each section of the repository reflects a stage of the research process, includi
 07_network-architecture
 08_toc-design
 09_field-testing
+10_openmanet-ptt
 ```
 
 ---
@@ -119,8 +120,8 @@ It does not promote or endorse any specific operational use case. The goal is to
 | TOC Hardware                          | 🟡 In Progress | Surface identified, further validation needed     |
 | Mesh Networking Theory                | 🟢 Complete    | Concepts understood                               |
 | MANET Routing Protocols               | 🟢 Complete    | OLSR / BATMAN / Babel researched                  |
-| WiFi HaLow Research                   | 🟡 In Progress | Promising but requires implementation             |
-| OpenWRT / Mesh Implementation         | 🔴 Not Started | Needs hands-on setup                              |
+| WiFi HaLow Research                   | 🟡 In Progress | HaLowLink2 bench hardware inventoried             |
+| OpenWRT / Mesh Implementation         | 🟡 In Progress | 802.11ah mesh verified on bench; BATMAN installed but not active |
 | Network Architecture Design           | 🟡 In Progress | Early structure defined                           |
 | TOC Architecture                      | 🟡 In Progress | Conceptual phase                                  |
 | Field Testing                         | 🔴 Not Started | Requires deployment + measurement                 |
@@ -143,16 +144,18 @@ Transitioning from **research → implementation**, specifically:
 * OpenWRT configuration
 * 802.11s mesh setup
 * WiFi HaLow deployment
+* OpenMANET PTT validation
 * Network architecture design
 
 ---
 
 ## Next Milestones
 
-* Build first functional mesh network
-* Test routing protocols (Babel vs BATMAN)
+* Convert the HaLowLink2 bench baseline into a repeatable configuration
+* Test routing protocols (BATMAN first, then Babel/OLSR only if needed)
+* Run the OpenMANET transport bench runbook before any PTT work
 * Establish TOC node
-* Begin field testing (RSSI / packet loss)
+* Begin field testing only after bench routing and rollback pass
 
 ---
 

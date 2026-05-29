@@ -1,22 +1,24 @@
 # Field Testing Summary
 
-Initial field testing validates several core assumptions.
+No field testing has been verified yet.
 
 ---
 
-## Confirmed
+## Bench-Only Confirmed
 
-* mesh networking is viable for short to medium distances
-* antenna elevation significantly improves performance
-* relay nodes are necessary for extended coverage
+The following are bench findings only:
+
+* three HaLowLink2 nodes are reachable on the Diamond Net bench LAN
+* the nodes can establish 802.11ah mesh peer links
+* BATMAN Advanced tooling is installed but not active as the forwarding plane
 
 ---
 
 ## Challenges Identified
 
-* signal degradation with obstructions
-* limited range at ground level
-* need for optimized node placement
+* routing migration still needs a rollback plan
+* no range, obstruction, elevation, or placement claims have been verified
+* no throughput or TAK service access test has been completed across the HaLow path
 
 ---
 
@@ -24,8 +26,8 @@ Initial field testing validates several core assumptions.
 
 The next phase of research will focus on:
 
-* refining routing protocols (Babel vs BATMAN)
-* testing WiFi HaLow hardware
+* refining routing protocols, starting with BATMAN because it is already installed
+* testing WiFi HaLow hardware on a bench before field use
 * improving TOC deployment strategy
 * integrating full network stack
 
@@ -33,9 +35,4 @@ The next phase of research will focus on:
 
 ## Conclusion
 
-The project is transitioning from:
-
-* initial experimentation
-  → structured system refinement
-
-This marks the beginning of a more advanced implementation phase.
+The project is transitioning from research notes into measured bench implementation.

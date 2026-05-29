@@ -1,0 +1,239 @@
+# OpenMANET Transport Bench Runbook
+
+Status: ready for bench planning, not executed
+
+This runbook is the next practical step for the HaLowLink2 routers. It focuses only on OpenMANET transport. Push-to-talk is intentionally deferred until the transport layer is stable.
+
+## Goal
+
+Create a verified OpenMANET-compatible HaLow transport baseline without losing management access.
+
+Success means:
+
+- the nodes use OpenMANET-compatible BATMAN-V forwarding
+- client devices can obtain mesh addresses
+- management access still works
+- traffic crosses the HaLow path reliably enough for later TAK/dashboard/PTT tests
+
+## Hard Boundaries
+
+- Do not flash firmware until the exact image and checksum are recorded.
+- Do not change all three nodes at once.
+- Do not call this a field test.
+- Do not claim PTT works from this runbook.
+- Do not publish credentials, Wi-Fi keys, private backups, or exact field placement.
+
+## Known Starting State
+
+Verified on 2026-05-29:
+
+| Role | IP | Hostname | State |
+|---|---:|---|---|
+| TOC | 192.168.8.20 | halowlink2-6c1b | reachable |
+| TL | 192.168.8.21 | halowlink2-710b | reachable |
+| RTO | 192.168.8.22 | halowlink2-6ddb | reachable |
+
+Current baseline:
+
+- OpenWrt 23.05.6 Morse-2.11.8
+- HaLow 802.11ah mesh on channel 28
+- BATMAN tooling installed
+- BATMAN not active as the forwarding plane
+- config backups saved privately on the mini PC
+
+## Decision Point
+
+Choose one path before touching routers:
+
+### Path A - OpenMANET Firmware
+
+Use this if a compatible HaLowLink2 OpenMANET image exists for the target feature set.
+
+Required before flash:
+
+- release tag
+- asset filename
+- SHA256 checksum
+- recovery method
+- physical/local access
+
+Known release check from 2026-05-29:
+
+- OpenMANET `1.6.4` and `1.6.5` had HaLowLink2 images.
+- OpenMANET `1.7.0` added comms/PTT features but did not expose a HaLowLink2 image in the checked release assets.
+- HaLowLink2 comms is not assumed supported on `1.7.0`.
+
+### Path B - Manual OpenWrt UCI
+
+Use this if keeping the current Morse/OpenWrt firmware and manually aligning network config to OpenMANET's BATMAN-V shape.
+
+Required before config:
+
+- current `/etc/config/network`
+- current `/etc/config/wireless`
+- rollback command armed
+- one-node-only change
+
+## OpenMANET Target Shape
+
+Preferred OpenMANET-compatible model:
+
+```text
+HaLow 802.11s/mesh -> BATMAN-V bat0 -> br-ahwlan -> local Ethernet / AP clients
+```
+
+Addressing model:
+
+- mesh domain: `10.41.0.0/16`
+- mesh gate range: `10.41.0.0/24`
+- safe static ranges: `10.41.253.0/24` and `10.41.254.0/24`
+- fresh-flash default: `10.41.254.1`
+
+## Preflight Checklist
+
+Run before any change:
+
+```sh
+date -u
+ssh root@192.168.8.20 hostname
+ssh root@192.168.8.21 hostname
+ssh root@192.168.8.22 hostname
+```
+
+On each node:
+
+```sh
+cat /etc/openwrt_release
+ip -br addr
+ip route
+uci show network
+uci show wireless
+batctl if || true
+batctl n || true
+batctl o || true
+iw dev wlan0 station dump
+```
+
+Record:
+
+- firmware version
+- active management IP
+- mesh peers
+- current BATMAN state
+- backup path
+
+## Single-Node Config Test
+
+Start with one non-critical node.
+
+Before applying any config, save local rollback files on that node:
+
+```sh
+cp /etc/config/network /root/network.pre-openmanet
+cp /etc/config/wireless /root/wireless.pre-openmanet
+```
+
+Arm timed rollback:
+
+```sh
+(sleep 180; cp /root/network.pre-openmanet /etc/config/network; cp /root/wireless.pre-openmanet /etc/config/wireless; wifi reload; /etc/init.d/network reload) &
+echo $! > /tmp/openmanet-rollback.pid
+```
+
+Apply only the minimum config needed for the selected path.
+
+Verify immediately:
+
+```sh
+ip -br addr
+ip route
+batctl if
+batctl n
+batctl o
+ping -c 3 192.168.8.1
+ping -c 3 192.168.8.20
+```
+
+If still reachable and correct:
+
+```sh
+kill "$(cat /tmp/openmanet-rollback.pid)"
+rm -f /tmp/openmanet-rollback.pid
+```
+
+If uncertain, let rollback fire.
+
+## Transport Pass Criteria
+
+Do not proceed to all-node rollout until the first node passes:
+
+- SSH management remains reachable.
+- Web management remains reachable.
+- `batctl if` lists the expected hard interface.
+- `batctl n` shows at least one neighbor.
+- `batctl o` shows originators when multiple nodes are active.
+- a client can obtain the expected mesh address if the OpenMANET `10.41.0.0/16` model is active.
+- 5 minutes of pings complete without unexpected loss.
+- local HTTP traffic works across the mesh path.
+
+## All-Node Rollout Gate
+
+Only after the first node passes:
+
+1. Record exact config diff.
+2. Apply the same rollback-gated process to the next node.
+3. Re-test topology after every node.
+4. Save post-change backups.
+5. Update the test log.
+
+## Post-Transport Tests
+
+After all selected nodes are stable:
+
+```sh
+batctl if
+batctl n
+batctl o
+ping -c 50 <peer-ip>
+iperf3 -c <peer-ip>
+curl -I http://<service-ip>:8080/
+```
+
+If TAK/dashboard traffic is in scope:
+
+- confirm client reaches the mini PC portal
+- confirm dashboard loads
+- confirm TAK/OpenAIS endpoint reachability
+- record what worked and what did not
+
+## Stop Conditions
+
+Stop and restore baseline if:
+
+- more than one management path disappears
+- repeated packet loss appears after the config change
+- `batctl` has no interface or no neighbors
+- DHCP behavior is inconsistent
+- the OpenMANET target version lacks the needed HaLowLink2 support
+
+## Output To Record
+
+Add a test-log entry with:
+
+- date/time
+- path chosen: firmware or manual UCI
+- image/checksum if flashed
+- node changed
+- config diff summary
+- `batctl` output summary
+- ping/HTTP/throughput result
+- pass/fail
+- rollback status
+
+## Next After Transport
+
+Only after this runbook passes:
+
+1. TAK/dashboard traffic test.
+2. OpenMANET BLOS test if relevant.
+3. PTT-over-MANET test using a supported comms endpoint.
