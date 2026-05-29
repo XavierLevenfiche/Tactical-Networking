@@ -207,6 +207,7 @@ Additional gate after the 2026-05-29 TL flash:
 
 - do not flash TOC or RTO until TL setup wizard/CLI config is completed
 - current verified TL state: OpenMANET `1.6.5` is reachable at `10.41.254.1`, but `batctl if` / `batctl n` are empty, `uci show openmanet` is empty, and logs show mesh-config / ALFRED missing-interface errors
+- subsequent rollback-gated TL mesh activation moved TL to `10.41.100.89`; `br-ahwlan` and `bat0` came up and `batctl if` reports `wlan0: active`, but final validation stopped when the `diamond-toc` relay stopped replying
 - confirm TL role/name/channel policy
 - confirm `openmanetd`, BATMAN, DHCP, and client access are stable
 - confirm the docs model being followed: OpenMANET `1.6.5` observed state versus newer `bat0`/`br-ahwlan` documentation
