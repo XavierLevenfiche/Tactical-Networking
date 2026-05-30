@@ -1,6 +1,6 @@
 # OpenMANET Second-Node Rollout Gate
 
-Status: prepared, not executed
+Status: executed for TOC on 2026-05-29/30
 
 This note defines the next safe move after the first HaLowLink2 OpenMANET node, TL, was flashed and configured.
 
@@ -18,6 +18,24 @@ As of 2026-05-29:
 - ALFRED still needs local/direct confirmation because the nested relay timed out during that check.
 
 This is a single-node OpenMANET/BATMAN baseline. It is not a verified multi-node mesh.
+
+## Executed TOC Result
+
+TOC was flashed as the second OpenMANET node after TL passed the single-node gate.
+
+Observed result:
+
+- TOC left original management IP `192.168.8.20`.
+- TOC first came back as fresh OpenMANET at `10.41.254.1`.
+- TOC was then configured into the same `br-ahwlan` / `bat0` / `batmesh0` shape as TL.
+- TOC received management IP `10.41.138.82`.
+- TL remained at `10.41.100.89`.
+- TL and TOC both show each other as BATMAN-V neighbors.
+- TL and TOC web/SSH were reachable from `diamond-toc`.
+- `openmanetd` and `alfred` reported `running` on TOC.
+- RTO remained untouched on original Morse/OpenWrt at `192.168.8.22`.
+
+This is a verified two-node bench mesh over OpenMANET/BATMAN. It is not a field test.
 
 ## Second-Node Candidate
 
