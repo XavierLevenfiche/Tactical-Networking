@@ -37,6 +37,23 @@ Observed result:
 
 This is a verified two-node bench mesh over OpenMANET/BATMAN. It is not a field test.
 
+## Bench Traffic Result
+
+Basic two-node traffic checks passed on 2026-05-30:
+
+- `tools/halow-openmanet-status.sh` completed cleanly for TL and TOC.
+- Bidirectional IPv4 and IPv6 ping had `0%` loss.
+- TL -> TOC IPv4 ping average: `1.863 ms`.
+- TOC -> TL IPv4 ping average: `1.104 ms`.
+- TL -> TOC IPv6 ping average: `1.302 ms`.
+- TOC -> TL IPv6 ping average: `1.583 ms`.
+- Temporary HTTP `4 MiB` file transfer succeeded both directions.
+- TOC -> TL HTTP transfer: `1.48s`.
+- TL -> TOC HTTP transfer: `1.30s`.
+- `iperf` was not installed; BusyBox `nc` on the image could not listen, so no iperf-style throughput result is claimed.
+
+These are bench management/traffic checks only. They do not prove field range, TAK traffic, PTT, or BLOS.
+
 ## Second-Node Candidate
 
 Preferred next node: TOC.
