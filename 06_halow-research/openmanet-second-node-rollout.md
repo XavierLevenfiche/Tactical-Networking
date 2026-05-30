@@ -54,6 +54,25 @@ Basic two-node traffic checks passed on 2026-05-30:
 
 These are bench management/traffic checks only. They do not prove field range, TAK traffic, PTT, or BLOS.
 
+## Third-Node RTO Stop Condition
+
+RTO remains the original Diamond Net access/recovery anchor. Do not flash it until the management path no longer depends on RTO's `DIAMONDNET` AP.
+
+Attempted management-path migration on 2026-05-30:
+
+- Surface was reachable on `Lobster Shack Mesh`, but that path could not reach TL/TOC/RTO management addresses.
+- `DIAMONDNET-5G` profile was installed on the Surface.
+- A guarded switch to `DIAMONDNET-5G` was attempted with delayed fallback to `Lobster Shack Mesh`.
+- Surface dropped from Tailscale/SSH and did not recover during polling.
+- RTO was not flashed or changed.
+
+Required before RTO:
+
+- Recover Surface locally.
+- Prove Surface can remain reachable over Tailscale while connected to a network that reaches TL/TOC/RTO management, or add a second management interface.
+- Re-run `tools/halow-openmanet-status.sh`.
+- Confirm RTO backup and firmware dry-run immediately before flash.
+
 ## Second-Node Candidate
 
 Preferred next node: TOC.
